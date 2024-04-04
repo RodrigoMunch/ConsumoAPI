@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkModule {
 
-    private const val BASE_URL = "https://alexwohlbruck.github.io/cat-facts/"
+    private const val BASE_URL = "https://cat-fact.herokuapp.com"
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
@@ -14,5 +14,5 @@ object NetworkModule {
         .build()
 
 
-    val service = retrofit.create(FactServicie::class.java)
+    val service = retrofit.create(FactService::class.java)
 }

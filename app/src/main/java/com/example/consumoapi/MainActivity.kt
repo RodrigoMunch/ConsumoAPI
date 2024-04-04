@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         bt_atualizar = findViewById(R.id.bt_atualizar)
         fato = findViewById(R.id.fato)
 
-        fetchCatObs()
 
         bt_atualizar.setOnClickListener {
             fetchCatObs()
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             val response = NetworkModule.service.getFact()
             if (response.isSuccessful) {
                 val fact = response.body()
-                fato.text = fact?.facts?.get(0)
+                fato.text = fact?.text
             } else {
                 Log.e("MainActivity", "Error: ${response.errorBody()}")
             }
